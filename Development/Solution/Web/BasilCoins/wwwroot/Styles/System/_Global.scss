@@ -1,0 +1,272 @@
+﻿$primary-color: #c0392b;
+$secondary-color: #206592;
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    color: #707070;
+    font-size: 14px;
+}
+
+.max-setter-container {
+    display: flex;
+    width: 100%;
+
+    .max-setter {
+        margin: auto;
+        width: 100%;
+        max-width: 1200px;
+    }
+}
+
+.form-control {
+    min-height: 34px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+
+    .custom-label {
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+}
+
+//quantity control input type number
+.quantity {
+    width: 120px;
+    position: relative;
+
+    input {
+        width: 100%;
+        height: 40px;
+        line-height: 1.65;
+        float: left;
+        display: block;
+        padding: 0;
+        text-align: center;
+        margin: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        border: 1px solid #ccc;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    .quantity-nav {
+        float: left;
+        position: relative;
+        height: 42px;
+    }
+
+    .quantity-button {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+
+    .quantity-button.quantity-up {
+        cursor: pointer;
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        top: 0;
+        border: none;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #333;
+        background-color: #f5f5f5;
+        border: 1px solid #ccc;
+    }
+
+    .quantity-button.quantity-down {
+        cursor: pointer;
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        top: 0;
+        border: none;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #333;
+        background-color: #f5f5f5;
+        border: 1px solid #ccc;
+    }
+}
+
+//Radio Button with Image
+.custom-radio-image {
+    margin: 5px;
+    position: relative;
+
+    i {
+        display: none;
+        position: absolute;
+        bottom: -4px;
+        right: -4px;
+        font-size: 16px;
+        color: $primary-color;
+    }
+
+    [type=radio] {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    [type=radio] + img {
+        cursor: pointer;
+        object-fit: contain;
+        width: 70px;
+        height: 70px;
+        padding: 10px;
+    }
+
+    [type=radio]:checked + img {
+        outline: 2px solid $primary-color;
+    }
+
+    [type=radio]:checked + img + i {
+        display: block;
+    }
+}
+
+//Custom accordion
+.custom-accordion {
+    font-size: 12px;
+
+    .ca-header {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background-color: #fff;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .ca-header-control {
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        flex: .4;
+        min-width: 75px;
+    }
+
+    .ca-header-ctrl-itm {
+        min-width: 15px;
+        max-width: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #2980b9;
+        margin-right: 10px;
+        font-size: 15px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.ca-header-toggle {
+            color: #f39c12;
+            transform: rotate(90deg);
+            transition: all .3s;
+
+            &.collapsed {
+                transform: rotate(0deg);
+                transition: all .3s;
+            }
+        }
+    }
+
+    .ca-header-column {
+        flex: 1;
+        padding: 0 5px;
+        font-weight: 400;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+
+        h5, label {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        h5 {
+            margin: 0;
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        label {
+            margin: 0;
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+    }
+
+    .ca-header-control.ca-toggle {
+        flex: 1;
+        min-width: 20px;
+        max-width: 20px;
+    }
+}
+
+#overlay-container {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.85);
+    position: fixed;
+    z-index: 999999999999 !important;
+    top: 0;
+    left: 0;
+
+    .loader {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            max-width: 320px;
+            object-fit: contain;
+        }
+
+        p {
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #333;
+        }
+    }
+}
+

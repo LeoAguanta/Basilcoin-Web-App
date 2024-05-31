@@ -1,0 +1,124 @@
+﻿<div class="my-orders">
+    <div class="orders-body">
+        <div class="orders-container">
+            <div class="orders-title-head">My Orders</div>
+            <div class="orders-holder">
+                <div class="order-filter">
+                    <div class="row m-0">
+                        <div class="col-md-6 p-1">
+                            <div class="cc-search">
+                                <input class="form-control form-control-sm" placeholder="Search Order Reference" />
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        <div class="row col-md-6 m-0 p-1">
+                            <div class="col-6 pl-0 pr-1">
+                                <select class="form-control form-control-sm"><option>All Status</option></select>
+                            </div>
+                            <div class="col-6 pr-0 pl-1">
+                                <div class="cc-date">
+                                    <input class="form-control form-control-sm" placeholder="MM/DD/YYYY" />
+                                    <i class="fas fa-calendar"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="accordion_orders" class="custom-accordion">
+                    <div class="w-100" ng-repeat="mo in MyOrders">
+                        <!--Main Row-->
+                        <div class="ca-header w-100">
+                            <!--List Head-->
+                            <div class="ca-header-control ca-toggle">
+                                <a class="ca-header-ctrl-itm collapsed" style="color:#2980b9;" data-toggle="collapse" data-target="#group_{{$index}}" data-parent="#accordion_orders" title="Toggle group"><i class="fas fa-sort"></i></a>
+                            </div>
+                            <div class="ca-header-column align-items-start">
+                                <h5 ng-bind="mo.OrderRef" class="w-100"></h5>
+                                <label>Order Reference</label>
+                            </div>
+                            <div class="ca-header-column align-items-start" style="max-width: 100px;">
+                                <h5 ng-bind="mo.Date"></h5>
+                                <label>Date</label>
+                            </div>
+                            <div class="ca-header-column align-items-center d-none d-md-flex">
+                                <div class="item-badge-holder">
+                                    <div ng-if="mo.Products.length > 3" class="more-indicator" ng-bind="'+' + (mo.Products.length - 3)"></div>
+                                    <img ng-repeat="p in mo.Products | limitTo : 3" ng-src="../../Assets/Images/Products/{{p.image}}" />
+                                </div>
+                                <label>Items</label>
+                            </div>
+                            <div class="ca-header-column align-items-center">
+                                <h5 ng-bind="mo.Status"></h5>
+                                <label>Status</label>
+                            </div>
+                        </div>
+                        <!--Details-->
+                        <div id="group_{{$index}}" class="collapse ca-details">
+                            <div class="row m-0 mb-2">
+                                <div class="col-md-6 p-1">
+                                    <div class="ca-detail-header">
+                                        <div class="row m-0 mb-2">
+                                            <div class="col-md-4 cdh-label">Discount</div>
+                                            <div class="col-md-8 text-right" ng-bind="'0'"></div>
+                                        </div>
+                                        <div class="row m-0 mb-2">
+                                            <div class="col-md-4 cdh-label">Shipping Fee</div>
+                                            <div class="col-md-8 text-right" ng-bind="mo.ShippingFee"></div>
+                                        </div>
+                                        <div class="row m-0 mb-2">
+                                            <div class="col-md-4 cdh-label">Subtotal</div>
+                                            <div class="col-md-8 text-right" ng-bind="mo.Subtotal"></div>
+                                        </div>
+                                        <div class="row m-0 mb-2">
+                                            <div class="col-md-4 cdh-label">Total</div>
+                                            <div class="col-md-8 text-right" ng-bind="mo.Total"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 p-1">
+                                    <div class="ca-detail-header">
+                                        <div class="row m-0 mb-2">
+                                            <div class="col-md-4 cdh-label">Order Reference</div>
+                                            <div class="col-md-8" ng-bind="mo.OrderRef"></div>
+                                        </div>
+                                        <div class="row m-0 mb-2">
+                                            <div class="col-md-4 cdh-label">Payment Reference</div>
+                                            <div class="col-md-8" ng-bind="mo.PaymentRef"></div>
+                                        </div>
+                                        <div class="row m-0 mb-2">
+                                            <div class="col-md-4 cdh-label">Payment Method</div>
+                                            <div class="col-md-8" ng-bind="mo.PaymentMethod"></div>
+                                        </div>
+                                        <div class="row m-0">
+                                            <div class="col-md-4 cdh-label">Delivery Address</div>
+                                            <div class="col-md-8" ng-bind="mo.DeliveryAddress"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="cp-item" ng-repeat="p in mo.Products">
+                                    <div class="d-flex flex-lg-row flex-column">
+                                        <div class="d-flex" style="flex:1.5;">
+                                            <img ng-src="../../Assets/Images/Products/{{p.image}}" />
+                                            <div class="cp-desc">
+                                                <div class="cp-name" ng-bind="p.name"></div>
+                                                <div class="cp-price" ng-bind="'$ ' + p.price"></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center" style="flex:1;">
+                                            <div class="cp-qty" ng-bind="'x' + p.qty"></div>
+                                            <div class="cp-price pt-2" style="color:#333;font-size:14px;" ng-bind="'$ ' + (p.price * 1)"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div ng-include="'../../Templates/footer.tmpl.html'"></div>
+</div>

@@ -1,0 +1,93 @@
+[
+  //controllers
+  {
+    "outputFileName": "wwwroot/App/Controllers/home.min.js",
+    "inputFiles": [
+      "wwwroot/App/Controllers/home.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true,
+      "termSemicolons": true,
+      "evalTreatment": "ignore"
+    },
+    "sourceMap": false
+  },
+
+
+
+  //html
+  //#region html
+
+
+
+  //#regionend
+
+
+  //components
+  {
+    "outputFileName": "wwwroot/Scripts/System/main.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/System/main.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true,
+      "termSemicolons": true,
+      "evalTreatment": "ignore"
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/System/config.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/System/config.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true,
+      "termSemicolons": false
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/System/providers.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/System/providers.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true,
+      "termSemicolons": true,
+      "evalTreatment": "ignore"
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/System/directives.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/System/directives.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true,
+      "termSemicolons": true,
+      "evalTreatment": "ignore"
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/Scripts/System/mainController.min.js",
+    "inputFiles": [
+      "wwwroot/Scripts/System/mainController.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true,
+      "termSemicolons": true,
+      "evalTreatment": "ignore"
+    },
+    "sourceMap": false
+  }
+
+]

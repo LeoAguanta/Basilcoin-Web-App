@@ -1,0 +1,66 @@
+﻿<div class="product-details">
+    <div class="product-details-body">
+        <div class="product-container">
+            <!--PRODUCT MAIN INFO-->
+            <div class="product-flex">
+                <div class="pf-left">
+                    <div id="crsl" class="carousel slide carousel-fade" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div id="ci-{{$index}}" class="carousel-item" ng-class="{'active' : $index == 0}" ng-repeat="g in Product.gallery">
+                                <img class="product-image" ng-src="../../Assets/Images/Products/{{g.FileName}}" />
+                            </div>
+                        </div>
+                        <div class="carousel-img-thumbnail">
+                            <img id="thumb-{{$index}}" class="thumb" data-target="#crsl" ng-src="../../Assets/Images/Products/{{g.FileName}}" data-slide-to="{{$index}}" ng-class="{'active' : $index == 0}" ng-repeat="g in Product.gallery" ng-click="SetActiveThumb($index)" />
+                        </div>
+                    </div>
+                </div>
+                <div class="pf-right">
+                    <div class="product-name" ng-bind="Product.name"></div>
+                    <div class="product-sub-info">
+                        <span>Unique Deals</span>
+                        <span>Canadian Mint Coins</span>
+                    </div>
+                    <div class="product-price" ng-bind="'$' + Product.price"></div>
+                    <div class="product-discount">
+                        <div class="product-discount-amount" ng-bind="'$' + Product.priceBefore"></div>
+                        <div class="product-discount-percent" ng-bind="'25%'"></div>
+                    </div>
+                    <div class="d-flex mt-3">
+                        <div style="margin-right: 20px;font-weight: 500;">Quantity</div>
+                        <div class="d-flex flex-column">
+                            <div class="quantity">
+                                <input type="number" min="1" step="1" value="1">
+                            </div>
+                            <label class="product-quantity" ng-bind="Product.stock > 0 ? (Product.stock + ' item(s) available') : 'Sold-out'" ng-class="{'sold-out' : Product.stock > 0}"></label>
+                        </div>
+                    </div>
+                    <div class="add-to-cart" ng-click="AddToCart()"><i class="fas fa-cart-plus"></i> Add to cart</div>
+                </div>
+            </div>
+            <!--PRODUCT DESCRIPTION-->
+            <div class="product-description">
+                <h5>Description</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <!--RELATED PRODUCTS-->
+            <div class="product-title">Related Products</div>
+            <div class="row m-0 product-holder" repeat-holder>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 p-1 d-flex" ng-repeat="r in Products">
+                    <div class="product-item wow" elem-load get-interval="($index * .15)" get-animation="'fadeInUp'">
+                        <img ng-src="../../Assets/Images/Products/{{r.image}}" />
+                        <div class="product-name" ng-bind="r.name" title="{{r.name}}"></div>
+                        <div class="product-price" ng-bind="'$' + r.price"></div>
+                        <div class="product-discount-h">
+                            <div class="product-discount-amount-h" ng-bind="'$' + '546'"></div>
+                            <div class="product-discount-percent-h" ng-bind="'25%'"></div>
+                        </div>
+                        <div class="product-stock" ng-class="{'sold-out' : r.stock == 0}" ng-bind="r.stock > 0 ? r.stock + ' in stock' : 'Sold-out'"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div ng-include="'../../Templates/footer.tmpl.html'"></div>
+</div>

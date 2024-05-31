@@ -1,0 +1,171 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Order Summary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body style="font-size: 14px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;">
+    <table cellpadding="0" cellspacing="0" style="width: calc(100% - 20px); max-width: 1000px; margin:auto; margin-bottom: 50px;">
+        <!--System Logo/Name-->
+        <tr>
+            <td style="vertical-align: middle; text-align: center; height: 120px;">
+                <img style="width: 50px;
+                     height: 50px;
+                     object-fit: contain;
+                     margin-right: 10px;" src="https://i.ibb.co/2kXrfLV/logo-2.png" />
+            </td>
+        </tr>
+        <!--Letter-->
+        <tr>
+            <td>
+                <table cellpadding="0" cellspacing="0"
+                       style="width: 100%;
+                       background-color: #fff;
+                       border-radius: 5px;
+                       overflow: hidden;
+                       display: flex;
+                       flex-direction: column;
+                       box-shadow: 2px 2px 6px rgba(0,0,0,0.15);">
+                    <!--Banner-->
+                    <tr>
+                        <td style="position:relative;overflow: hidden; height: 170px; background: url('https://i.ibb.co/cC95Wnm/e-confirmation-banner.jpg') center center no-repeat;
+                                   background-size: cover;
+                                   text-align: center;
+                                   vertical-align: middle;">
+                            <h5 style="font-size: 1.5rem;
+                                    color: #fff;
+                                    margin: 0;
+                                    height: 100%;
+                                    text-align: center;
+                                    line-height: 170px;
+                                    background-color: rgba(27,66,152,0.7);">
+                                    Order Summary
+                            </h5>
+                        </td>
+                    </tr>
+                    <!--Message-->
+                    <tr>
+                        <td>
+                            <h1 style="color: #333;
+                                font-weight: bold;
+                                margin-bottom: 20px;
+                                font-size: 25px;
+                                padding-top: 20px;
+                                text-align: center;
+                        ">
+                                Hi, John
+                            </h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="color: #707070;
+                               font-size: 1.3em;
+                               line-height: 1.5em;
+                               text-align: center;
+                               padding:0 20px;">
+                                <p>Thank you for shopping with us we recieve your order <b style="color: #333;">[order reference]</b> on <b style="color: #333;">[Order Date]</b> and paid thru <b style="color: #333;">[Payment method]</b>  with payment reference <b style="color: #333;">[Payment Reference]</b>.</p>
+                                <p>We're getting your order ready and will let you know once it's on the way. We wish you enjoy shopping with us and hope to see you again, Thank you!</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <!--DELIVERY DETAILS-->
+                    <tr>
+                        <td style="padding: 0 40px;">
+                            <h5 style="font-size: 1.15rem;
+                                margin: 0;
+                                color: rgb(27, 66, 152);padding-bottom: 10px;
+                                border-bottom: 1px solid #ddd;">
+                                Delivery Details
+                            </h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0 40px;">
+                            <div><p>Customer name: <b>John Doe</b></p></div>
+                            <div><p>Order date: <b>Mar. 03, 2020</b></p></div>
+                            <div><p>Delivery address: <b>Ontario, Canada</b></p></div>
+                            <div><p>Email address: <b>john@sample.com</b></p></div>
+                        </td>
+                    </tr>
+                    <!--ITEMS-->
+                    <tr>
+                        <td style="padding: 0 40px;">
+                            <h5 style="font-size: 1.15rem;
+                                margin: 0;
+                                color: rgb(27, 66, 152);padding-bottom: 10px;
+                                border-bottom: 1px solid #ddd;">
+                                Items
+                            </h5>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px 40px;">
+                            <!--sample item 1 - itong table yung i-rerepeat-->
+                            <table cellpadding="0" cellspacing="0" style="width: 100%; margin-bottom: 10px;">
+                                <tr style="margin-bottom: 10px; background-color: #f6f8fc;">
+                                    <td style="width: 50px;
+                                        height: 50px;padding: 20px;
+                                        padding-right: 0;">
+                                        <img style="width: 50px;
+                                        height: 50px;
+                                        object-fit: contain;
+                                        margin-right: 20px;" src="https://i.ibb.co/2kXrfLV/logo-2.png" />
+                                    </td>
+                                    <td style="background-color: #f6f8fc;">
+                                        <h5 style="margin: 0;
+                                            font-size: 16px;color: #333;
+                                            font-weight: 500;
+                                            display: -webkit-box;
+                                            -webkit-line-clamp: 2;
+                                            -webkit-box-orient: vertical;
+                                            overflow: hidden;">1859 CANADA 1-CENT ICCS CERTIFIED F-12 WIDE 9/8</h5>
+                                        <h3 style="margin: 0;
+                                            font-size: 20px;
+                                            font-weight: bold;
+                                            color: #27ae60;">$66.50</h3>
+                                        <label style="margin:0; color: #777;">Qty: <b>x1</b></label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!--AMOUNT-->
+                    <tr>
+                        <td style="padding: 20px 40px; background-color: #34495e;">
+                            <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                                <tr>
+                                    <td style="text-align: right; font-size: 18px; color: #fff;">Sub Total:</td>
+                                    <td style="text-align: right; font-size: 18px; color: #fff; padding: 5px;"><b>$66.50</b></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right; font-size: 18px; color: #fff;">Shipping Fee:</td>
+                                    <td style="text-align: right; font-size: 18px; color: #fff; padding: 5px;"><b>$0.00</b></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right; font-size: 18px; color: #fff;">Total:</td>
+                                    <td style="text-align: right; font-size: 18px; color: #fff; padding: 5px;"><b>$66.50</b></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right; font-size: 18px; color: #fff;">Paid Thru:</td>
+                                    <td style="text-align: right; font-size: 18px; color: #fff; padding: 5px;"><b>Paymaya</b></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

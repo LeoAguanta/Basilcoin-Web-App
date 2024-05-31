@@ -1,0 +1,95 @@
+﻿<div class="category">
+    <div class="category-body">
+        <div class="category-container">
+            <div class="category-title-head">Unique Deals</div>
+            <div class="category-flex">
+                <div class="category-filter">
+                    <!--Category-->
+                    <div class="cf-title">Related Categories</div>
+                    <div class="cf-item" ng-repeat="c in UniqueDeals" ng-bind="c.name" ng-click="Detail(c)" ng-class="{'active' : DetailName == c.name}"></div>
+                    <div class="cf-divider"></div>
+                    <!--Filter-->
+                    <div class="cf-title">Filter</div>
+                    <div class="custom-control custom-checkbox mb-2 mt-2">
+                        <input type="checkbox" class="custom-control-input" id="price-hl">
+                        <label class="custom-control-label" for="price-hl" style="cursor: pointer;">Price High to Low</label>
+                    </div>
+                    <div class="custom-control custom-checkbox mb-2">
+                        <input type="checkbox" class="custom-control-input" id="price-lh">
+                        <label class="custom-control-label" for="price-lh" style="cursor: pointer;">Price Low to High</label>
+                    </div>
+                    <div class="custom-control custom-checkbox mb-2">
+                        <input type="checkbox" class="custom-control-input" id="popular">
+                        <label class="custom-control-label" for="popular" style="cursor: pointer;">Most Popular</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="in-stock">
+                        <label class="custom-control-label" for="in-stock" style="cursor: pointer;">In stock</label>
+                    </div>
+                </div>
+                <div class="category-content">
+                    <div class="cc-head">
+                        <div class="cc-head-left">
+                            <div class="cc-search">
+                                <input class="form-control form-control-sm" placeholder="Search for products" />
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="cc-count">38 items found.</div>
+                        </div>
+                        <div class="cc-head-right d-flex d-md-none">
+                            <i class="fas fa-filter" ng-click="ToggleFilter()"></i>
+                        </div>
+                    </div>
+                    <div class="row m-0" repeat-holder>
+                        <div class="col-lg-3 col-md-4 col-6 p-1 d-flex" ng-repeat="r in Products">
+                            <div class="category-item wow" elem-load get-interval="($index * .15)" get-animation="'fadeInUp'" ng-click="ViewProduct(r.ID)">
+                                <img ng-src="../../Assets/Images/Products/{{r.image}}" />
+                                <div class="category-name" ng-bind="r.name" title="{{r.name}}"></div>
+                                <div class="category-price" ng-bind="'$' + r.price"></div>
+                                <div class="category-discount">
+                                    <div class="category-discount-amount" ng-bind="'$' + '546'"></div>
+                                    <div class="category-discount-percent" ng-bind="'25%'"></div>
+                                </div>
+                                <div class="category-stock" ng-class="{'sold-out' : r.stock == 0}" ng-bind="r.stock > 0 ? r.stock + ' in stock' : 'Sold-out'"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div ng-include="'../../Templates/footer.tmpl.html'"></div>
+    <!--Filter Drawer when mobile-->
+    <div class="category-filter-mobile d-flex d-md-none" ng-class="{'toggled' : ShowFilter}">
+        <i class="fas fa-times close-filter" ng-click="CloseFilter()"></i>
+        <div class="cfm-body">
+            <!--Category-->
+            <div class="cf-title">Related Categories</div>
+            <div class="cf-item" ng-repeat="c in UniqueDeals" ng-bind="c.name" ng-click="Detail(c)" ng-class="{'active' : DetailName == c.name}"></div>
+            <div class="cf-divider"></div>
+            <!--Filter-->
+            <div class="cf-title">Filter</div>
+            <div class="custom-control custom-checkbox mb-2 mt-2">
+                <input type="checkbox" class="custom-control-input" id="price-hl-m">
+                <label class="custom-control-label" for="price-hl-m" style="cursor: pointer;">Price High to Low</label>
+            </div>
+            <div class="custom-control custom-checkbox mb-2">
+                <input type="checkbox" class="custom-control-input" id="price-lh-m">
+                <label class="custom-control-label" for="price-lh-m" style="cursor: pointer;">Price Low to High</label>
+            </div>
+            <div class="custom-control custom-checkbox mb-2">
+                <input type="checkbox" class="custom-control-input" id="popular-m">
+                <label class="custom-control-label" for="popular-m" style="cursor: pointer;">Most Popular</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="in-stock-m">
+                <label class="custom-control-label" for="in-stock-m" style="cursor: pointer;">In stock</label>
+            </div>
+        </div>
+        <div class="cfm-footer">
+            <div class="cfm-item"><i class="fas fa-eraser"></i> Clear</div>
+            <div class="cfm-item emphasized"><i class="fas fa-check"></i> Apply</div>
+        </div>
+    </div>
+</div>

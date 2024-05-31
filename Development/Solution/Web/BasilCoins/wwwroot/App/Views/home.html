@@ -1,0 +1,120 @@
+﻿<div class="home">
+    <!--Banner-->
+    <div class="home-banner">
+        <div class="hb-left d-none d-md-flex">
+            <div class="hb-left-content">
+                <h5 class="home-name">Basils Coin</h5>
+                <h5 class="mb-3">Coin Collector's Shop</h5>
+                <p>Searching for ONE-OF-A-KIND Coin Deals? Check Out The Basils Coins’ Unique Deals Sale.</p>
+                <button class="btn" ng-click="Show()">Learn more</button>
+
+            </div>
+        </div>
+        <div class="hb-right">
+            <div class="hb-right-bg"></div>
+            <div class="hb-right-overlay"></div>
+            <div class="hbr-menu-container d-none d-lg-flex">
+                <!--<div class="hbr-menu-item">Coins <i class="fas fa-caret-down"></i></div>
+                <div class="hbr-menu-item">Collector's Corner</div>-->
+                <div class="hbr-menu-item" ng-click="Login()">Login/Signup</div>
+                <div class="hbr-menu-item" ng-click="TestMethod()">About Us</div>
+                <div class="hbr-menu-item">Contact Us</div>
+            </div>
+            <div class="hb-right-content">
+                <div class="row m-0 w-100" repeat-holder>
+                    <div class="col-md-6 p-2 d-none d-md-block" ng-repeat="d in deals">
+                        <div class="deal-item" elem-load get-interval="($index * .15)" get-animation="'fadeInRight'" ng-click="Deals(d.ID)">
+                            <img ng-src="../../Assets/Images/Deals/{{d.image}}" />
+                            <div class="deal-overlay"></div>
+                            <div class="deal-title" ng-bind="d.title"></div>
+                            <div class="deal-desc" ng-bind="d.description"></div>
+                        </div>
+                    </div>
+                    <!--changed to carousel when mobile-->
+                    <div class="col-12 p-0 d-block d-md-none">
+                        <div id="crsl" class="carousel slide" data-ride="carousel">
+
+                            <!-- Indicators -->
+                            <ul class="carousel-indicators">
+                                <li data-target="#crsl" data-slide-to="{{$index}}" ng-class="{'active' : $index == 0}" ng-repeat="d in deals"></li>
+                            </ul>
+
+                            <!-- The slideshow -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item" ng-class="{'active' : $index == 0}" ng-repeat="d in deals">
+                                    <div class="deal-item" ng-click="Deals(d.ID)">
+                                        <img ng-src="../../Assets/Images/Deals/{{d.image}}" />
+                                        <div class="deal-overlay"></div>
+                                        <div class="deal-title" ng-bind="d.title"></div>
+                                        <div class="deal-desc" ng-bind="d.description"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Our Collections-->
+    <div class="max-setter-container our-collection" ng-if="UniqueDeals.length > 0">
+        <div class="max-setter">
+            <!--<div class="home-title">Our Collections Test Changes-v2222</div>
+            <div>
+                <label>Computer Users</label>
+                <table class="table">
+                    <tr>
+                        <td>ID</td>
+                        <td>Code</td>
+                        <td>Name</td>
+                        <td>SeqNo</td>
+                        <td>Comment</td>
+                    </tr>
+                    <tr ng-repeat="d in ComputerUsers">
+                        <td>{{d.ID}}</td>
+                        <td>{{d.Code}}</td>
+                        <td>{{d.Name}}</td>
+                        <td>{{d.SeqNo}}</td>
+                        <td>{{d.Comment}}</td>
+                    </tr>
+                </table>
+            </div>-->
+            <div class="row m-0">
+                <div class="col-12 p-0 text-center font-weight-bold my-4" style="font-size:20px;">Discover our products</div>
+                <div class="col-lg-3 col-md-4 p-1" ng-repeat="c in UniqueDeals">
+                    <div class="collection-item wow fadeInUp" ng-click="GoToCategory()">
+                        <img ng-src="../../Assets/Images/Categories/{{c.image}}" />
+                        <div class="ci-desc">
+                            <div class="ci-name" ng-bind="c.name"></div>
+                            <div class="ci-count" ng-bind="c.count > 1 ? c.count + ' items found' : c.count + 'item found'"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Recommended-->
+    <div class="max-setter-container recommended">
+        <div class="max-setter">
+            <div class="home-title">Recommended</div>
+            <div class="px-2 px-sm-0">
+                <div class="row m-0" repeat-holder>
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 p-1 d-flex" ng-repeat="r in recommended">
+                        <div class="recommended-item wow" elem-load get-interval="($index * .1)" get-animation="'fadeInUp'">
+                            <img ng-src="../../Assets/Images/Products/{{r.image}}" />
+                            <div class="recommended-name" ng-bind="r.name" title="{{r.name}}"></div>
+                            <div class="recommended-price" ng-bind="'$' + r.price"></div>
+                            <div class="recommended-discount">
+                                <div class="recommended-discount-amount" ng-bind="'$' + '546'"></div>
+                                <div class="recommended-discount-percent" ng-bind="'25%'"></div>
+                            </div>
+                            <div class="recommended-stock" ng-class="{'sold-out' : r.stock == 0}" ng-bind="r.stock > 0 ? r.stock + ' in stock' : 'Sold-out'"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div ng-include="'../../Templates/footer.tmpl.html'"></div>
+</div>

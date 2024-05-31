@@ -1,0 +1,127 @@
+﻿<div class="login">
+    <div class="login-header">
+        <div class="mh-content">
+            <div class="mh-left">
+                <div class="web-logo" ng-click="BackHome()"></div>
+                <div class="mhl-menu-container">
+                    <div class="mhl-menu-item d-none d-md-block" style="font-weight: bold;
+                         color: #333;
+                         font-size: 13px;
+                         cursor: pointer;
+                         text-transform: uppercase;" ng-click="BackHome()">Basils Coins</div>
+                </div>
+            </div>
+            <div class="mh-menu-container">
+                <div class="back-home" ng-click="BackHome()">Back to home page</div>
+            </div>
+        </div>
+    </div>
+    <div class="login-body">
+        <div class="login-container">
+            <div class="lc-title-head">Login or Create your account.</div>
+            <div class="login-flex">
+                <!--LOGIN PANEL-->
+                <form ng-submit="Login()" class="lc-left">
+                    <div class="lc-left-bg"></div>
+                    <div class="lc-left-overlay"></div>
+                    <div class="lc-content">
+                        <div class="lc-title">Already have an acccount?</div>
+                        <div class="lc-subtitle">Please enter your account to continue.</div>
+                        <div class="form-group">
+                            <label class="custom-label">Email</label>
+                            <input class="form-control" ng-model="l.Email" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="custom-label">Password</label>
+                            <input class="form-control" ng-model="l.Password" required />
+                        </div>
+
+                        <button class="btn login-btn" type="submit">Login</button>
+                    </div>
+                </form>
+                <!--SIGNUP PANEL-->
+                <div class="lc-right">
+                    <div class="lcr-title">Sign-up</div>
+                    <p>Fill all required fields to create your account.</p>
+                    <form ng-submit="Register(r)">
+                        <div class="row m-0">
+                            <div class="col-md-6 p-1">
+                                <div class="form-group">
+                                    <label class="custom-label">First Name</label>
+                                    <input type="text" class="form-control" ng-model="r.FirstName" required />
+                                </div>
+                            </div>
+                            <div class="col-md-6 p-1">
+                                <div class="form-group">
+                                    <label class="custom-label">Last Name:</label>
+                                    <input type="text" class="form-control" ng-model="r.LastName" required />
+                                </div>
+                            </div>
+                            <div class="col-12 p-1">
+                                <div class="form-group">
+                                    <label class="custom-label">Addess</label>
+                                    <textarea class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6 p-1">
+                                <div class="form-group">
+                                    <label class="custom-label">City</label>
+                                    <input type="text" class="form-control" ng-model="r.City" required />
+                                </div>
+                            </div>
+                            <div class="col-md-6 p-1">
+                                <div class="form-group">
+                                    <label class="custom-label">Country</label>
+                                    <select class="form-control" ng-model="r.ID_Country" required></select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 p-1">
+                                <div class="form-group">
+                                    <label class="custom-label">Province</label>
+                                    <select class="form-control" ng-model="r.ID_Province" required></select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 p-1">
+                                <div class="form-group">
+                                    <label class="custom-label">Postal Code / Zip:</label>
+                                    <input type="number" class="form-control" ng-model="r.ZipCode" required />
+                                </div>
+                            </div>
+                            <div class="col-12 p-1">
+                                <div class="form-group">
+                                    <label class="custom-label">Email</label>
+                                    <input type="email" class="form-control" ng-model="r.Email" required />
+                                </div>
+                            </div>
+                            <div class="col-md-6 p-1">
+                                <div class="form-group">
+                                    <label class="custom-label">Create Password</label>
+                                    <input type="password" class="form-control" ng-model="r.Password" required />
+                                </div>
+                            </div>
+                            <div class="col-md-6 p-1">
+                                <div class="form-group">
+                                    <label class="custom-label">Confirm Password:</label>
+                                    <input type="password" class="form-control" ng-model="r.ConfirmPassword" required />
+                                </div>
+                            </div>
+                            <div class="col-12 p-1">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="agree-check">
+                                    <label class="custom-control-label" for="agree-check" style="cursor: pointer;">I agree to the</label>
+                                    <a style="color: #2980b9;cursor: pointer;">Terms and Conditions</a>.
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-lg-end w-100">
+                                <button class="btn create-account-btn" type="submit">Create Account</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div ng-include="'../../Templates/footer.tmpl.html'"></div>
+</div>

@@ -1,0 +1,36 @@
+﻿<div class="category">
+    <div class="category-body">
+        <div class="category-container">
+            <div class="category-title-head">Royal Canadian Mint</div>
+            <div class="category-flex">
+                <div class="category-filter">
+                    <!--Category-->
+                    <div class="cf-title">Related Categories</div>
+                    <div class="cf-item" ng-repeat="c in RelatedCategories" ng-bind="c.name" ng-click="Detail(c)" ng-class="{'active' : DetailName == c.name}"></div>
+                </div>
+                <div class="category-content">
+                    <div class="cc-head">
+                        <div class="cc-head-left">
+                            <div class="cc-search">
+                                <input class="form-control form-control-sm" placeholder="Search in category" />
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="cc-count">38 items found.</div>
+                        </div>
+                    </div>
+                    <div class="row m-0" repeat-holder>
+                        <div class="col-lg-3 col-md-4 col-6 p-1 d-flex" ng-repeat="r in Categories">
+                            <div class="category-item wow" elem-load get-interval="($index * .15)" get-animation="'fadeInUp'" style="min-height:0;">
+                                <img ng-src="../../Assets/Images/SubCategories/{{r.image}}" />
+                                <div class="category-name" ng-bind="r.name" title="{{r.name}}"></div>
+                                <div class="category-more">View more</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div ng-include="'../../Templates/footer.tmpl.html'"></div>
+</div>

@@ -1,0 +1,94 @@
+[
+  //controllers
+  //{
+  //  "outputFileName": "wwwroot/App/Controllers/Home.min.js",
+  //  "inputFiles": [
+  //    "wwwroot/App/Controllers/Home.js"
+  //  ],
+  //  "minify": {
+  //    "enabled": true,
+  //    "renameLocals": true,
+  //    "termSemicolons": true,
+  //    "evalTreatment": "ignore"
+  //  },
+  //  "sourceMap": false
+  //},
+
+
+
+  //html
+  //#region html
+
+
+
+  //#regionend
+
+
+ // components
+
+  //{
+  //  "outputFileName": "wwwroot/Scripts/System/main.min.js",
+  //  "inputFiles": [
+  //    "wwwroot/Scripts/System/main.js"
+  //  ],
+  //  "minify": {
+  //    "enabled": true,
+  //    "renameLocals": true,
+  //    "termSemicolons": true,
+  //    "evalTreatment": "ignore"
+  //  },
+  //  "sourceMap": false
+  //},
+  //{
+  //  "outputFileName": "wwwroot/Scripts/System/Config.min.js",
+  //  "inputFiles": [
+  //    "wwwroot/Scripts/System/Config.js"
+  //  ],
+  //  "minify": {
+  //    "enabled": true,
+  //    "renameLocals": true,
+  //    "termSemicolons": false
+  //  },
+  //  "sourceMap": false
+  //},
+  //{
+  //  "outputFileName": "wwwroot/Scripts/System/Providers.min.js",
+  //  "inputFiles": [
+  //    "wwwroot/Scripts/System/Providers.js"
+  //  ],
+  //  "minify": {
+  //    "enabled": true,
+  //    "renameLocals": true,
+  //    "termSemicolons": true,
+  //    "evalTreatment": "ignore"
+  //  },
+  //  "sourceMap": false
+  //},
+  //{
+  //  "outputFileName": "wwwroot/Scripts/System/Directives.min.js",
+  //  "inputFiles": [
+  //    "wwwroot/Scripts/System/Directives.js"
+  //  ],
+  //  "minify": {
+  //    "enabled": true,
+  //    "renameLocals": true,
+  //    "termSemicolons": true,
+  //    "evalTreatment": "ignore"
+  //  },
+  //  "sourceMap": false
+  //},
+  //{
+  //  "outputFileName": "wwwroot/Scripts/System/BaseController.min.js",
+  //  "inputFiles": [
+  //    "wwwroot/Scripts/System/BaseController.js"
+  //  ],
+  //  "minify": {
+  //    "enabled": true,
+  //    "renameLocals": true,
+  //    "termSemicolons": true,
+  //    "evalTreatment": "ignore"
+  //  },
+  //  "sourceMap": false
+  //}
+
+]

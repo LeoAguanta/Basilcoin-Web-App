@@ -1,0 +1,147 @@
+﻿<div class="checkout-page">
+    <div class="cart-body">
+        <div class="cart-container">
+            <div class="cart-title-head">Checkout</div>
+            <div class="cart-holder">
+                <div class="cart-flex">
+                    <div class="cart-product">
+                        <div class="cp-item" ng-repeat="ci in CartItems">
+                            <div class="d-flex flex-lg-row flex-column">
+                                <div class="d-flex" style="flex:1.5;">
+                                    <img ng-src="../../Assets/Images/Products/{{ci.image}}" />
+                                    <div class="cp-desc">
+                                        <div class="cp-name" ng-bind="ci.name"></div>
+                                        <div class="cp-price" ng-bind="'$ ' + ci.price"></div>
+                                        <div class="cart-discount">
+                                            <div class="cart-discount-amount" ng-bind="'$' + '546'"></div>
+                                            <div class="cart-discount-percent" ng-bind="'25%'"></div>
+                                        </div>
+                                        <div class="cp-stock" ng-class="{'sold-out' : ci.stock == 0}" ng-bind="ci.stock > 0 ? ci.stock + ' items available' : 'sold-out'"></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between my-3" style="flex:1;">
+                                    <div class="quantity">
+                                        <input type="number" min="1" step="1" value="1">
+                                    </div>
+                                    <div class="cp-price pt-2" style="color:#333;font-size:14px;" ng-bind="'$ ' + (ci.price * 1)"></div>
+                                </div>
+                            </div>
+                            <div class="cp-remove-itm"><i class="fas fa-trash"></i> Remove</div>
+                        </div>
+                    </div>
+                    <div class="cart-summary">
+                        <div class="cs-holder">
+                            <!--Shipping Details-->
+                            <div class="cs-panel">
+                                <div class="cs-title mb-3">Shipping Details</div>
+                                <div class="form-group">
+                                    <label class="custom-label">Order reference</label>
+                                    <p class="form-control form-control-sm h-auto">OR-000123</p>
+                                </div>
+                                <div class="form-group">
+                                    <label class="custom-label">Customer Name</label>
+                                    <p class="form-control form-control-sm h-auto">John Doe</p>
+                                </div>
+                                <div class="form-group">
+                                    <label class="custom-label">Delivery Address</label>
+                                    <p class="form-control form-control-sm h-auto">1010 Easy St., Ottawa City, Ontario, K1A 0B1</p>
+                                </div>
+                                <div class="custom-control custom-checkbox" style="cursor:pointer;">
+                                    <input type="checkbox" class="custom-control-input" id="deliveryaddress">
+                                    <label class="custom-control-label" style="cursor:pointer;color:#333;" for="deliveryaddress" ng-click="OtherAddress()" ng-model="UseDiff">Use different address</label>
+                                </div>
+                                <div ng-if="UseDiff">
+                                    <div class="form-group">
+                                        <label class="custom-label">Province</label>
+                                        <select class="form-control form-control-sm">
+                                            <option>Select Province</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="custom-label">City</label>
+                                        <select class="form-control form-control-sm">
+                                            <option>Select City</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="custom-label">House No/Street/Lot</label>
+                                        <input class="form-control form-control-sm" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="custom-label">Zip code</label>
+                                        <input class="form-control form-control-sm" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-0">
+                                <div class="col-lg-6 p-1">
+                                    <!--Amount-->
+                                    <div class="cs-panel">
+                                        <div class="cs-title mb-3">Amount</div>
+                                        <div class="cs-info">
+                                            <label>Subtotal</label>
+                                            <span>$ 924.00</span>
+                                        </div>
+                                        <div class="cs-info">
+                                            <label>Shipping Fee</label>
+                                            <span>$ 0.00</span>
+                                        </div>
+                                        <div class="cs-info">
+                                            <label>Total</label>
+                                            <span style="color:#c0392b;font-size:16px;">$ 924.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 p-1">
+                                    <!--Payment Method-->
+                                    <div class="cs-panel" ng->
+                                        <div class="cs-title mb-3">Payment Method</div>
+                                        <div class="d-flex flex-wrap">
+                                            <label class="custom-radio-image">
+                                                <input type="radio" name="payment" value="visa" checked>
+                                                <img src="../../Assets/Images/Footer/visa_logo.png" style="width:50px;height:50px;">
+                                                <i class="fas fa-check-circle"></i>
+                                            </label>
+
+                                            <label class="custom-radio-image">
+                                                <input type="radio" name="payment" value="mastercard">
+                                                <img src="../../Assets/Images/Footer/mastercard_logo.png" style="width:50px;height:50px;">
+                                                <i class="fas fa-check-circle"></i>
+                                            </label>
+                                            <label class="custom-radio-image">
+                                                <input type="radio" name="payment" value="paypal">
+                                                <img src="../../Assets/Images/Footer/paypal_logo.png" style="width:50px;height:50px;">
+                                                <i class="fas fa-check-circle"></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="cs-checkout"><i class="fas fa-check"></i> Place order</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--YOU MIGHT ALSO LIKE-->
+            <div class="product-title">You might also like</div>
+            <div class="row m-0 product-holder" repeat-holder>
+                <div class="col-lg-2 col-md-3 col-sm-4 col-6 p-1 d-flex" ng-repeat="r in Products">
+                    <div class="product-item wow" elem-load get-interval="($index * .1)" get-animation="'fadeInUp'">
+                        <img ng-src="../../Assets/Images/Products/{{r.image}}" />
+                        <div class="product-name" ng-bind="r.name" title="{{r.name}}"></div>
+                        <div class="product-price" ng-bind="'$' + r.price"></div>
+                        <div class="product-discount-h">
+                            <div class="product-discount-amount-h" ng-bind="'$' + '546'"></div>
+                            <div class="product-discount-percent-h" ng-bind="'25%'"></div>
+                        </div>
+                        <div class="product-stock" ng-class="{'sold-out' : r.stock == 0}" ng-bind="r.stock > 0 ? r.stock + ' in stock' : 'Sold-out'"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div ng-include="'../../Templates/footer.tmpl.html'"></div>
+</div>

@@ -1,0 +1,223 @@
+﻿.login {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+    .login-header {
+        z-index: 2;
+        display: flex;
+        padding: 0 20px;
+        height: 60px;
+        position: fixed;
+        width: 100%;
+        left: 0;
+        top: 0;
+        background-color: #fff;
+        box-shadow: 2px 2px 6px rgba(0,0,0,.3);
+
+        .mh-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .mh-left {
+            display: flex;
+            align-items: center;
+
+            .web-logo {
+                width: 35px;
+                height: 35px;
+                cursor: pointer;
+                margin-right: 20px;
+                background: url('../../Assets/Images/logo_2.png') center center no-repeat;
+                background-size: contain;
+            }
+        }
+
+        .back-home {
+            color: $primary-color;
+            padding: 5px 10px 8px 10px;
+            border: 1px solid $primary-color;
+            border-radius: 5px;
+            font-size: 13px;
+            outline: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+    }
+
+    .login-body {
+        flex: 1;
+        display: flex;
+        background-color: #f5f5f5;
+        padding: 100px 10px 40px 10px;
+    }
+
+    .login-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .login-flex {
+        display: flex;
+        min-height: 500px;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .lc-title-head {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    .lc-left {
+        flex: 0.7;
+        position: relative;
+        padding: 20px;
+        display: flex;
+
+        .lc-left-bg {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url(../../Assets/Images/coins_bg.jpg) center center no-repeat;
+            background-size: cover;
+            filter: grayscale(1) opacity(0.2);
+        }
+
+        .lc-left-overlay {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /*background: rgba(22,160,133,1);
+            background: -moz-linear-gradient(-45deg, rgba(22,160,133,1) 0%, rgba(241,196,15,0.5) 100%);
+            background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(22,160,133,1)), color-stop(100%, rgba(241,196,15,0.5)));
+            background: -webkit-linear-gradient(-45deg, rgba(22,160,133,1) 0%, rgba(241,196,15,0.5) 100%);
+            background: -o-linear-gradient(-45deg, rgba(22,160,133,1) 0%, rgba(241,196,15,0.5) 100%);
+            background: -ms-linear-gradient(-45deg, rgba(22,160,133,1) 0%, rgba(241,196,15,0.5) 100%);
+            background: linear-gradient(135deg, rgba(22,160,133,1) 0%, rgba(241,196,15,0.5) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#16a085', endColorstr='#f1c40f', GradientType=1 );*/
+            background: rgba(192,57,43,1);
+            background: -moz-linear-gradient(-45deg, rgba(192,57,43,1) 0%, rgba(231,56,39,0.47) 100%);
+            background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(192,57,43,1)), color-stop(100%, rgba(231,56,39,0.47)));
+            background: -webkit-linear-gradient(-45deg, rgba(192,57,43,1) 0%, rgba(231,56,39,0.47) 100%);
+            background: -o-linear-gradient(-45deg, rgba(192,57,43,1) 0%, rgba(231,56,39,0.47) 100%);
+            background: -ms-linear-gradient(-45deg, rgba(192,57,43,1) 0%, rgba(231,56,39,0.47) 100%);
+            background: linear-gradient(135deg, rgba(192,57,43,1) 0%, rgba(231,56,39,0.47) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0392b', endColorstr='#e73827', GradientType=1 );
+        }
+
+        .lc-content {
+            position: relative;
+            margin: auto;
+            width: 100%;
+            max-width: 320px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lc-title {
+            font-size: 22px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .lc-subtitle {
+            color: #fff;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            .custom-label {
+                font-size: 14px;
+                color: #fff;
+                font-weight: 500;
+            }
+
+            input {
+                background-color: transparent;
+                box-shadow: none;
+                outline: none;
+                border: 1px solid #fff;
+                color: #fff;
+            }
+        }
+
+        .login-btn {
+            margin: 20px auto 0;
+            width: 100%;
+            max-width: 150px;
+            outline: none;
+            border: none;
+            color: $primary-color;
+            background-color: #fff;
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 9px 24px;
+            box-shadow: 2px 2px 6px rgba(0,0,0,.2);
+        }
+    }
+
+    .lc-right {
+        flex: 1;
+        padding: 20px;
+
+        .lcr-title {
+            font-size: 22px;
+            color: $primary-color;
+            font-weight: bold;
+        }
+
+        .create-account-btn {
+            margin-top: 20px;
+            outline: none;
+            border: none;
+            color: #fff;
+            background-color: $primary-color;
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 9px 24px;
+            box-shadow: 2px 2px 6px rgba(0,0,0,.2);
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+
+}
+@media screen and (max-width: 991px) {
+}
+@media screen and (max-width: 767px) {
+    .login .login-flex {
+        flex-direction: column;
+    }
+    .login .lc-title-head {
+        font-size: 18px !important;
+        margin-bottom: 15px !important;
+    }
+    .login .lc-left .lc-title {
+        font-size: 18px !important;
+    }
+    .login .login-body {
+        padding: 80px 10px 40px 10px !important;
+    }
+}
+@media screen and (max-width: 575px) {
+}

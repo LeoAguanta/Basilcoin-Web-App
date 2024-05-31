@@ -1,0 +1,103 @@
+﻿<div class="my-account">
+    <div class="account-body">
+        <div class="account-container">
+            <div class="account-title-head">My Account</div>
+            <div class="account-holder">
+                <div class="row m-0">
+                    <div class="col-md-5 p-1">
+                        <div class="acc-panel d-flex flex-column">
+                            <div class="avatar-holder">
+                                <div class="avatar-initial" ng-bind="SetIcon('Juan Dela Cruz')"></div>
+                                <div class="avatar-name">Juan Dela Cruz</div>
+                                <p class="m-0">Last logged in: Mar 15, 2020</p>
+                            </div>
+                            <form style="flex:1;padding-top:20px;">
+                                <div class="d-flex flex-column h-100">
+                                    <div class="form-group">
+                                        <label class="custom-label">Current Password</label>
+                                        <input type="password" class="form-control" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="custom-label">New Password</label>
+                                        <input type="password" class="form-control" required />
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="custom-label">Confirm Password</label>
+                                        <input type="password" class="form-control" required />
+                                    </div>
+                                    <div class="d-flex justify-content-end w-100 mt-auto">
+                                        <button class="btn save-account-btn" type="submit">Update password</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-7 p-1">
+                        <div class="acc-panel">
+                            <div class="lcr-title">Account Information</div>
+                            <p style="margin-bottom: 20px;">Last updated: Mar 14, 2020</p>
+                            <form>
+                                <div class="row m-0">
+                                    <div class="col-md-6 p-1">
+                                        <div class="form-group">
+                                            <label class="custom-label">First Name</label>
+                                            <input type="text" class="form-control" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p-1">
+                                        <div class="form-group">
+                                            <label class="custom-label">Last Name:</label>
+                                            <input type="text" class="form-control" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-12 p-1">
+                                        <div class="form-group">
+                                            <label class="custom-label">Addess</label>
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p-1">
+                                        <div class="form-group">
+                                            <label class="custom-label">City</label>
+                                            <input type="text" class="form-control" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p-1">
+                                        <div class="form-group">
+                                            <label class="custom-label">Country</label>
+                                            <select class="form-control" required></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p-1">
+                                        <div class="form-group">
+                                            <label class="custom-label">Province</label>
+                                            <select class="form-control" required></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 p-1">
+                                        <div class="form-group">
+                                            <label class="custom-label">Postal Code / Zip:</label>
+                                            <input type="number" class="form-control" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-12 p-1">
+                                        <div class="form-group">
+                                            <label class="custom-label">Email</label>
+                                            <input type="email" class="form-control" ng-model="r.Email" required />
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex justify-content-end w-100">
+                                        <button class="btn save-account-btn" type="submit">Save changes</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div ng-include="'../../Templates/footer.tmpl.html'"></div>
+</div>

@@ -1,0 +1,96 @@
+﻿<div class="main-container">
+    <div class="main-header" ng-class="{'full-bg' : CurrentState != 'Main.Home'}">
+        <div class="mh-content">
+            <div class="mh-left" ng-state="'Main.UniqueDeals'">
+                <div class="web-logo" ng-click="BackHome()"></div>
+                <div class="mhl-menu-container" ng-class="{'full-bg' : CurrentState != 'Main.Home'}">
+                    <div class="mhl-menu-item" style="font-weight:bold;color:#000;" ng-click="BackHome()">Basils Coins</div>
+                    <div class="mhl-menu-item" ng-click="Login()">Login/Signup</div>
+                    <div class="mhl-menu-item">About Us</div>
+                    <div class="mhl-menu-item">Contact Us</div>
+                </div>
+            </div>
+            <div class="mh-menu-container">
+                <i class="fas fa-search mh-menu-item" ng-click="ToggleSearch()"></i>
+                <div class="dropdown mh-menu-item cart-dd">
+                    <i class="fas fa-shopping-cart  mh-menu-item cart has-item" data-toggle="dropdown"></i>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <div class="cart-dd-body">
+                            <div class="cart-dd-item" ng-repeat="c in Cart">
+                                <img ng-src="../../Assets/Images/Products/{{c.Image}}"/>
+                                <div class="cart-dd-desc">
+                                    <h5 ng-bind="c.Name"></h5>
+                                    <label ng-bind="'Qty: ' + c.Qty + ' | ' + 'Price: $' + c.Price"></label>
+                                </div>
+                                <i class="cart-dd-remove fas fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="cart-dd-footer" style="padding: 10px">
+                            <div class="cdf-item emphasized" style="border-radius: 5px; box-shadow: 2px 2px 6px rgba(0,0,0,0.15);" ng-click="Checkout()"><i class="fas fa-cash-register"></i> Checkout</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown mh-menu-item user-dd">
+                    <i class="fas fa-user-circle" data-toggle="dropdown"></i>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <div class="my-2 mx-auto position-relative">
+                            <i class="udd-icon-user fas fa-user-circle"></i>
+                            <i class="udd-active-indicator logged-in fas fa-circle"></i>
+                        </div>
+                        <div class="udd-user-name">Juan Dela Cruz</div>
+                        <div class="udd-email">juandelacruz@sample.com</div>
+                        <div class="udd-divider"></div>
+                        <div class="udd-item" ng-click="GoToMyAccount()"><i class="fas fa-user-cog"></i> My Account</div>
+                        <div class="udd-item" ng-click="GoToMyOrders()"><i class="fas fa-tasks"></i> My Orders</div>
+                        <div class="udd-divider"></div>
+                        <div class="udd-item"><i class="fas fa-sign-out-alt"></i> Sign out</div>
+                    </div>
+                </div>
+                <!--<i class="fas fa-th mh-menu-item d-block d-lg-none toggle-menu"></i>-->
+            </div>
+        </div>
+    </div>
+    <div ui-view></div>
+
+    <!--Search Drawer-->
+    <div class="main-search-container" ng-show="ShowSearch" ng-class="{'toggled' : ShowSearch}">
+        <div class="main-search-holder">
+            <i class="close-search fas fa-times" ng-click="CloseSearch()"></i>
+            <div class="main-search-content">
+                <div class="msc-head-title">Looking for something?</div>
+                <div class="msc-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" class="form-control" placeholder="Type keywords" />
+                    <button>Search</button>
+                </div>
+                <div class="msc-filter">
+                    <div class="msc-filter-item">Canadian Coins</div>
+                    <div class="msc-filter-item">World Coins</div>
+                    <div class="msc-filter-item">Paper Money</div>
+                    <div class="msc-filter-item">Tokens</div>
+                    <div class="msc-filter-item">Medal</div>
+                    <div class="msc-filter-item">Bullion</div>
+                    <div class="msc-filter-item">Medallions</div>
+                    <div class="msc-filter-item">Supplies</div>
+                    <div class="msc-filter-item">Commemorative Coins</div>
+                </div>
+                <!--SUGGESTED PRODUCTS-->
+                <div class="product-title">Suggested Products</div>
+                <div class="row m-0 product-holder" repeat-holder>
+                    <div class="col-lg-3 col-md-4 col-6 p-1 d-flex" ng-repeat="r in Suggested">
+                        <div class="product-item wow" elem-load get-interval="($index * .15)" get-animation="'fadeInUp'">
+                            <img ng-src="../../Assets/Images/Products/{{r.image}}" />
+                            <div class="product-name" ng-bind="r.name" title="{{r.name}}"></div>
+                            <div class="product-price" ng-bind="'$' + r.price"></div>
+                            <div class="product-discount-h">
+                                <div class="product-discount-amount-h" ng-bind="'$' + '546'"></div>
+                                <div class="product-discount-percent-h" ng-bind="'25%'"></div>
+                            </div>
+                            <div class="product-stock" ng-class="{'sold-out' : r.stock == 0}" ng-bind="r.stock > 0 ? r.stock + ' in stock' : 'Sold-out'"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

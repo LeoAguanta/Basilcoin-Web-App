@@ -1,0 +1,92 @@
+﻿.product-holder {
+    .product-item {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #fff;
+        background-color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: auto;
+        width: 100%;
+        max-width: 200px;
+        min-height: 320px;
+        height: 100%;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+        transition: all .3s;
+
+        img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .product-name {
+            font-weight: 500;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: $primary-color;
+        }
+
+        .product-discount-h {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            font-size: 12px;
+
+            .product-discount-amount-h {
+                color: #aaa;
+                text-decoration: line-through;
+                margin-right: 10px;
+            }
+
+            .product-discount-percent-h {
+                color: #333;
+                font-weight: bold;
+            }
+        }
+
+        .product-stock {
+            margin-top: auto;
+            margin-left: auto;
+            font-size: 12px;
+            color: #aaa;
+
+            &.sold-out {
+                color: #e74c3c;
+            }
+        }
+
+        &:hover {
+            border: 1px solid $secondary-color;
+            transition: all .3s;
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+}
+
+@media screen and (max-width: 991px) {
+}
+
+@media screen and (max-width: 767px) {
+    .product-holder .product-item {
+        max-width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .product-title {
+        font-size: 20px;
+        text-align: center !important;
+    }
+}
